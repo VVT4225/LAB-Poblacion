@@ -16,3 +16,9 @@ def lee_poblaciones(ruta_fichero):
             poblacion.append(RegistroPoblacion(pais,codigo,año,censo))
     return poblacion
 
+def calcula_paises(poblaciones):
+    conjunto = set()
+    for k in poblaciones:
+        conjunto.add(k[0])
+    res = sorted(conjunto)
+    return res
