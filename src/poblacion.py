@@ -19,6 +19,14 @@ def lee_poblaciones(ruta_fichero):
 def calcula_paises(poblaciones):
     conjunto = set()
     for k in poblaciones:
-        conjunto.add(k[0])
+        conjunto.add(k[0])      # alternativamente puedes poner k.pais
     res = sorted(conjunto)
+    return res
+
+def filtra_por_pais(poblaciones, nombre_o_codigo):
+    res = []
+    for k in poblaciones:
+        if (k[0] == nombre_o_codigo) or (k[1] == nombre_o_codigo):
+            info = namedtuple('Info','Año, Censo')
+            res.append(info(k[2],k[3]))
     return res
