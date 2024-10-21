@@ -30,3 +30,13 @@ def filtra_por_pais(poblaciones, nombre_o_codigo):
             info = namedtuple('Info','Año, Censo')
             res.append(info(k[2],k[3]))
     return res
+
+def filtra_por_paises_y_year(poblaciones,year,paises):
+    res = []
+    for pais in paises:
+        for p in poblaciones:
+            if p[0] == pais:
+                if p[2] == year:
+                    info = namedtuple('Info','País, Censo')
+                    res.append(info(p.pais,p.censo))
+    return res
