@@ -24,11 +24,16 @@ def calcula_paises(poblaciones):
     return res
 
 def filtra_por_pais(poblaciones, nombre_o_codigo):
+    '''
     res = []
     for k in poblaciones:
         if (k[0] == nombre_o_codigo) or (k[1] == nombre_o_codigo):
             info = namedtuple('Info','Año, Censo')
             res.append(info(k[2],k[3]))
+    return res
+    '''
+
+    res=[(p.año,p.censo) for p in poblaciones if p.pais==nombre_o_codigo or p.codigo==nombre_o_codigo]
     return res
 
 def filtra_por_paises_y_year(poblaciones,year,paises):
